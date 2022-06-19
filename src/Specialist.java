@@ -14,6 +14,9 @@ public class Specialist {
             try {
                 try {
                     Call call = ats.getCallsQueue().poll();
+                    if (call = null) {
+                        continue;
+                    }
                     System.out.printf("%s принял вызов с callId %d, в очереди ещё %d вызовов\n", Thread.currentThread().getName(),
                             call.getCallId(), ats.getCallsQueue().size());
                     Thread.sleep(SLEEP);
